@@ -1,0 +1,20 @@
+<template>
+    <lightning-card icon-name="standard:customer_lifecycle_analytics" title="Nível de satiscação do cliente">
+        <div class="slds-m-left_medium slds-m-right_medium">
+            <lightning-progress-bar value={levelSatisfaction} size="large" variant="circular"></lightning-progress-bar>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <div class="slds-m-left_medium slds-m-right_medium">
+            <lightning-combobox
+                name="picklistField"
+                label="Alterar nível de satisfação"
+                placeholder="Escolha o nível"
+                value={levelSatisfactionSelected}
+                options={levelsSatisfaction}
+                onchange={handleChange}>
+            </lightning-combobox>
+            <lightning-button variant="brand" label="Salvar" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
